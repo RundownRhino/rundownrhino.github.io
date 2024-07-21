@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ManyParticles</title>
+    <style>
+        canvas {
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body id="wasm-dst">
+    This simulation uses WebGPU (because it uses compute shaders, unavailable in WebGL). Refer to <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebGPU_API#browser_compatibility">this table</a> to find a browser that supports it. New-ish Chromium and Firefox Nightly both do, when launched with the right flags.
+
+    <script type="module">
+        import init from "./manyparticles_gpu/manyparticles.js";
+        init().then(() => {
+            console.log("WASM Loaded");
+        });
+    </script>
+</body>
+
+</html>
